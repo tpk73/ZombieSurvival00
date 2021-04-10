@@ -9,6 +9,7 @@ public class EnemyAttack : MonoBehaviour
 {
     NavMeshAgent deathSphere;
 
+    private GameObject target = GameObject.FindGameObjectWithTag("Player");
     public Transform goHere;
 
     // Start is called before the first frame update
@@ -26,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
 
     void SetAttackDestination()
     {
-        Vector3 targetVector = goHere.transform.position;
-        deathSphere.SetDestination(targetVector);
+        //Vector3 targetVector = goHere(target).transform.position;
+        //deathSphere.SetDestination(targetVector);
     }
 }

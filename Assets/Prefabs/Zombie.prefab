@@ -13,10 +13,8 @@ GameObject:
   - component: {fileID: 4813793220811163169}
   - component: {fileID: 4813793220811163168}
   - component: {fileID: 4813793220811163171}
-  - component: {fileID: 4813793220811163170}
-  - component: {fileID: 4813793220811163172}
-  - component: {fileID: 4813793220811163229}
   - component: {fileID: 4813793220811163173}
+  - component: {fileID: 2193065776257650703}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Untagged
@@ -117,54 +115,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &4813793220811163170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4813793220811163228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85443e1bbd0a4c148b586eb82a64608a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  goHere: {fileID: 530463984577108677, guid: c2fe31b4f588953419020eb31b546733, type: 3}
---- !u!114 &4813793220811163172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4813793220811163228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c60e6f8cb195c3841bd65eb296fad52d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathscrn: {fileID: 617993503872464961, guid: dcb1c8e5b3776354fb7f7d20f268eac8, type: 3}
---- !u!195 &4813793220811163229
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4813793220811163228}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!136 &4813793220811163173
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -179,3 +129,15 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2193065776257650703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4813793220811163228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9800b218f25e314f84d852b407f2643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

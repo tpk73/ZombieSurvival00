@@ -4,36 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public FixedJoystick moveJoystick;
-    public float moveSpeed = 2;
-    public float rotSpeed = 2;
+    public static PlayerController playerController;
 
-    private Rigidbody rb;
+    public float health;
 
-    private Vector3 dir;
-
-    void Start()
+    private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        health = 100f;
     }
 
-    void Update()
+    public void UpdateHealth(int damage)
     {
-        Movement();
-    }
-
-    void Movement()
-    {
-        float horMove = moveJoystick.Horizontal;
-        float verMove = moveJoystick.Vertical;
-
-        dir = new Vector3(horMove, 0f, verMove);
-
-        if(dir != Vector3.zero)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), rotSpeed * Time.deltaTime);
-        }
-
-        transform.Translate(transform.position + moveSpeed * Time.deltaTime * dir);
+        //health = health - ZombieController.zombieController.zombieStrength;
     }
 }
