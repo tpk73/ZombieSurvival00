@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
         HealthController healthController = new HealthController(100f);
         Debug.Log("Health: " + healthController.GetHealth());
 
-        healthController.Damage(ZombieController.zombieController.GetZombieStrength(ZombieController.zombieController.zombieStrength));
+        //healthController.Damage(ZombieController.zombieController.GetZombieStrength(ZombieController.zombieController.zombieStrength));
 
 
         Time.timeScale = 0f;
