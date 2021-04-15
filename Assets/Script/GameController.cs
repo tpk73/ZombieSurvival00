@@ -4,15 +4,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManager : MonoBehaviour
+public class GameController : MonoBehaviour
 {
-    public static GameManager gameManager;
+
+    public static GameController gameController;
     public Text countDown;
     public Text timerText;
 
     // Start is called before the first frame update
     void Start()
     {
+        HealthController healthController = new HealthController(100f);
+        Debug.Log("Health: " + healthController.GetHealth());
+
+        healthController.Damage(ZombieController.zombieController.GetZombieStrength(ZombieController.zombieController.zombieStrength));
+
+
         Time.timeScale = 0f;
         //CountDown.countDown.StartCoroutine(countDownToStart());
     }

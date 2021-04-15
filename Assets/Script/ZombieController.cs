@@ -8,24 +8,29 @@ public class ZombieController : MonoBehaviour
     public static ZombieController zombieController;
 
     Rigidbody rb;
-    GameObject target;
-    private float moveSpeed;
-    private float zombieStrength;
+    private GameObject target;
+    public float moveSpeed;
+    public float zombieStrength;
     Vector3 dirToTarget;
     public static bool spawnAllowed;
 
     void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
+        target = GameObject.FindWithTag("Player");
         Debug.Log("FoundPlayer");
         rb = GetComponent<Rigidbody>();
         moveSpeed = UnityEngine.Random.Range(5f, 8.5f);
-        zombieStrength = UnityEngine.Random.Range(15f, 25f);
+        
     }
 
     void Update()
     {
         MoveZombie();
+    }
+
+    public void GetZombieStrength()
+    {
+        zombieStrength = UnityEngine.Random.Range(15f, 25f);
     }
 
     void OnTriggerEnter(Collider other)
@@ -34,7 +39,7 @@ public class ZombieController : MonoBehaviour
         {
             case "Player":
                 ZombieController.spawnAllowed = false;
-                Destroy(other.gameObject);
+                //Destroy(other.gameObject);
                 target = null;
                 break;
         }
@@ -46,6 +51,11 @@ public class ZombieController : MonoBehaviour
         {
             dirToTarget = (target.transform.position - transform.position).normalized;
             rb.velocity = new Vector3(dirToTarget.x * moveSpeed,0, dirToTarget.z * moveSpeed);
+
+            //Vector3 pos = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+            //rb.MovePosition(pos);
+            //transform.LookAt(target);
+            transform.LookAt(target.transform);
         }
         else
         {
